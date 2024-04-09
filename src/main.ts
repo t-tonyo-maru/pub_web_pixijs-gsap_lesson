@@ -45,7 +45,12 @@ const run = async () => {
   )
   app.stage.addChild(btnContainer)
 
+  let isAnimation = false
   btnContainer.addEventListener('click', () => {
+    if (isAnimation) return
+    isAnimation = true
+    btnContainer.alpha = 0.5
+
     const timeline = gsap.timeline({ defaults: { duration: 2 } })
     timeline
       .to(bunny, { pixi: { colorize: 'red', colorizeAmount: 1 } })
@@ -53,6 +58,10 @@ const run = async () => {
       .to(bunny, { pixi: { saturation: 0 } })
       .to(bunny, { pixi: { brightness: 2 } })
       .to(bunny, { pixi: { contrast: 1.5 } })
+      .eventCallback('onComplete', () => {
+        isAnimation = false
+        btnContainer.alpha = 1
+      })
   })
 }
 
