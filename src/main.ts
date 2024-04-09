@@ -4,10 +4,9 @@ import { gsap } from 'gsap'
 import { PixiPlugin } from 'gsap/PixiPlugin'
 
 /**
- * * PixiJS
- *   * https://pixijs.com/8.x/tutorials/getting-started#1
- * * PixiPlugin GSAP
- *   * https://gsap.com/docs/v3/Plugins/PixiPlugin/
+ * Links
+ * * https://pixijs.com/8.x/tutorials/getting-started#1
+ * * https://gsap.com/docs/v3/Plugins/PixiPlugin/
  */
 const run = async () => {
   gsap.registerPlugin(PixiPlugin)
@@ -46,7 +45,7 @@ const run = async () => {
   app.stage.addChild(btnContainer)
 
   let isAnimation = false
-  btnContainer.addEventListener('click', () => {
+  btnContainer.addEventListener('pointerdown', () => {
     if (isAnimation) return
     isAnimation = true
     btnContainer.alpha = 0.5
@@ -55,9 +54,11 @@ const run = async () => {
     timeline
       .to(bunny, { pixi: { colorize: 'red', colorizeAmount: 1 } })
       .to(bunny, { pixi: { hue: 180 } })
+      .to(bunny, { pixi: { scale: 1.75 } })
       .to(bunny, { pixi: { saturation: 0 } })
       .to(bunny, { pixi: { brightness: 2 } })
       .to(bunny, { pixi: { contrast: 1.5 } })
+      .to(bunny, { pixi: { scale: 1 } })
       .eventCallback('onComplete', () => {
         isAnimation = false
         btnContainer.alpha = 1
