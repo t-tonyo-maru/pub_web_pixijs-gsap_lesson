@@ -27,6 +27,10 @@ https://t-tonyo-maru.github.io/pub_web_pixijs-gsap_lesson/
 | gsap           | ^3.12.5    |
 | pixi.js        | ^8.1.0     |
 
+## 主となる TypeScript ファイル
+
+[> src/main.ts](https://github.com/t-tonyo-maru/pub_web_pixijs-gsap_lesson/blob/main/src/main.ts)
+
 ## リンク集
 
 - PixiJS
