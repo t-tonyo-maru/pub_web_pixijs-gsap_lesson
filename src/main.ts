@@ -2,6 +2,7 @@ import './reset.css'
 import * as PIXI from 'pixi.js'
 import { gsap } from 'gsap'
 import { PixiPlugin } from 'gsap/PixiPlugin'
+import bunnyImage from './assets/bunny.png'
 
 /**
  * Links
@@ -16,7 +17,7 @@ const run = async () => {
   await app.init({ background: '#1099bb', resizeTo: window })
   document.body.appendChild(app.canvas)
 
-  const texture = await PIXI.Assets.load('https://pixijs.com/assets/bunny.png')
+  const texture = await PIXI.Assets.load(bunnyImage)
   const bunny = new PIXI.Sprite(texture)
   bunny.anchor.set(0.5)
   bunny.position.set(app.screen.width / 2, app.screen.height / 2)
