@@ -17,8 +17,10 @@ https://t-tonyo-maru.github.io/pub_web_pixijs-gsap_lesson/
 
 | ツール  | バージョン |
 | ------- | ---------- |
-| Node.js | 20.x.x     |
-| npm     | 10.x.x     |
+| Node.js | 24.x.x     |
+| npm     | 11.x.x     |
+
+Node.js は `mise` で `v24` を使う前提です。リポジトリ直下で `mise install` を実行すると利用できます。
 
 ## npm ライブラリ
 
